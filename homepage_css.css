@@ -30,53 +30,64 @@ body {
    =============================================== */
 .site-header {
   display: flex;
+  align-items: center;
+  justify-content: space-between; /* מפזר את הלוגו והתפריטים לצדדים ולאמצע */
   width: 100%;
-  position: sticky; top: 0; z-index: 1000;
-  background-color: #ffffff;
-  padding: 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky; 
+  top: 0; 
+  z-index: 1000;
+  background: #16213e; /* כחול כהה אחיד */
+  padding: 10px 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-/* Right Side (Light Blue) */
-.site-header .header-inner {
-  display: flex; 
-  align-items: center; 
-  gap: 30px;
-  padding: 0 30px; 
-  background-color: #dbeafe; 
-  flex-shrink: 0;
-}
-
-.brand .logo-link { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.logo-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
-.site-title { font-size: 24px; font-weight: 700; color: #16213e; }
-
-.main-nav .nav-list { display: flex; gap: 15px; list-style: none; padding: 0; margin: 0; }
-.nav-link { 
-  text-decoration: none; color: #374151; font-weight: 500; transition: 0.3s; 
-}
-.nav-link:hover, .nav-link.active { color: #0f4c75; font-weight: 700; }
-
-/* Left Side (Blue) - Fixed to push content to the left end */
+/* ביטול הרקעים הנפרדים שהיו קודם */
+.site-header .header-inner, 
 .secondary-nav {
-  flex-grow: 1;
-  background: linear-gradient(135deg, #16213e 0%, #0f4c75 100%);
-  display: flex; align-items: center; padding-left: 30px;
+  background: transparent; 
+  display: flex;
+  align-items: center;
+  padding: 0;
+  flex-grow: 0; /* ביטול הדחיפה הקיצונית לצדדים */
 }
+
+/* עיצוב הלוגו והכותרת */
+.brand .logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; }
+.site-title { font-size: 22px; font-weight: 700; color: #ffffff; }
+
+/* איחוד כל קישורי הניווט למראה אחיד */
+.main-nav .nav-list, 
 .secondary-nav-list { 
   display: flex; 
-  justify-content: flex-end; /* Push items to the far left (in RTL) */
-  width: 100%;
   gap: 20px; 
   list-style: none; 
-  margin: 0; padding: 0;
+  margin: 0; 
+  padding: 0; 
 }
-.secondary-nav-list a {
-  color: rgba(255, 255, 255, 0.9); text-decoration: none; font-size: 14px;
-  padding: 8px 12px; border-radius: 6px; transition: 0.3s;
-}
-.secondary-nav-list a:hover { background: rgba(255, 255, 255, 0.2); color: #fff; }
 
+.nav-link, 
+.secondary-nav-list a { 
+  text-decoration: none; 
+  color: #ffffff; /* טקסט לבן על רקע כחול */
+  font-weight: 500; 
+  font-size: 15px;
+  transition: 0.3s;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.nav-link:hover, 
+.secondary-nav-list a:hover { 
+  background: rgba(255, 255, 255, 0.15); 
+  color: #60a5fa; /* תכלת במעבר עכבר */
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #60a5fa;
+  font-weight: 700;
+}
 /* ===============================================
    Main Sections
    =============================================== */
@@ -184,3 +195,4 @@ mark { background-color: #dbeafe; color: #16213e; padding: 0 6px; border-radius:
   .step-card, .quick-card, .testimonial-card { padding: 24px 20px; }
 
 }
+
