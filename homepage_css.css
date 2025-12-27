@@ -28,41 +28,23 @@ body {
 /* ===============================================
    HEADER NAV BAR (FIXED & CONTINUOUS)
    =============================================== */
+/* ===============================================
+   HEADER NAV BAR (FIXED & CONTINUOUS)
+   =============================================== */
 .site-header {
   display: flex;
   align-items: center;
-  /* מתחיל מימין לשמאל ברצף אחד */
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
-  position: sticky; top: 0; z-index: 1000;
-  background-color: #16213e; /* כחול כהה */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #16213e;
   padding: 0 30px;
   height: 80px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* מאחד את הקבוצות הפנימיות כדי שלא יפריעו לרצף */
-.header-inner, 
-.secondary-nav {
-  display: flex;
-  align-items: center;
-  width: auto !important;
-  background: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* הריווח בין הלוגו לכפתורים */
-.header-inner {
-  gap: 30px; 
-}
-
-/* חיבור רציף בין התפריט הראשי למשני */
-.secondary-nav {
-  margin-right: 30px !important; /* רווח שממשיך את הרצף */
-}
-
-/* עיצוב הלוגו */
 .brand .logo-link { display: flex; align-items: center; text-decoration: none; }
 .logo-img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid #fff; object-fit: cover; }
 .site-title { 
@@ -70,20 +52,18 @@ body {
   margin-right: 12px; margin-left: 10px;
 }
 
-/* עיצוב רשימות הכפתורים */
-.nav-list, 
-.secondary-nav-list { 
+.center-nav { flex: 1; display: flex; justify-content: center; }
+
+.nav-list { 
   display: flex; 
   align-items: center;
-  gap: 15px; /* רווח אחיד בין הכפתורים */
+  gap: 20px;
   list-style: none; margin: 0; padding: 0; 
 }
 
-/* עיצוב הקישורים עצמם */
-.nav-link, 
-.secondary-nav-list a { 
+.nav-link { 
   text-decoration: none; 
-  color: #e2e8f0 !important; /* צבע לבן */
+  color: #e2e8f0 !important; 
   font-weight: 500; 
   font-size: 16px;
   padding: 10px 15px;
@@ -92,21 +72,45 @@ body {
   white-space: nowrap;
 }
 
-/* אפקט במעבר עכבר */
-.nav-link:hover, 
-.secondary-nav-list a:hover { 
+.nav-link:hover { 
   background-color: rgba(255, 255, 255, 0.15); 
-  color: #60a5fa !important; /* תכלת */
+  color: #60a5fa !important; 
 }
 
-/* כפתור פעיל (דף הבית) */
-.nav-link.active {
-  color: #ffffff !important;
-  font-weight: 700;
-  border-bottom: 3px solid #60a5fa;
-  border-radius: 0;
+.contact-btn {
+    background-color: #60a5fa;
+    color: #16213e !important;
+    font-weight: 700;
 }
 
+.contact-btn:hover {
+    background-color: #93c5fd;
+    color: #16213e !important;
+}
+
+/* ===============================================
+   Mobile Update
+   =============================================== */
+@media screen and (max-width: 900px) {
+  .site-header { 
+    flex-direction: column; 
+    height: auto; 
+    padding: 15px; 
+    gap: 15px;
+  }
+  
+  .center-nav { width: 100%; }
+  
+  .nav-list { 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 10px; 
+    width: 100%;
+  }
+
+  .left-nav { width: 100%; text-align: center; }
+  .contact-btn { display: block; width: 100%; }
+}
 /* ===============================================
    Main Sections
    =============================================== */
@@ -221,3 +225,4 @@ mark { background-color: #dbeafe; color: #16213e; padding: 0 6px; border-radius:
   .additional-info { border-radius: 0; }
   .step-card, .quick-card, .testimonial-card { padding: 24px 20px; }
 }
+
