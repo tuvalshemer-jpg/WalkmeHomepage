@@ -1,5 +1,5 @@
 /* ===============================================
-   WalkMe Homepage - Full CSS (Fixed Header)
+   WalkMe Homepage - Full CSS 
    =============================================== */
 
 /* Reset */
@@ -225,4 +225,5 @@ mark { background-color: #dbeafe; color: #16213e; padding: 0 6px; border-radius:
   .additional-info { border-radius: 0; }
   .step-card, .quick-card, .testimonial-card { padding: 24px 20px; }
 }
+
 
