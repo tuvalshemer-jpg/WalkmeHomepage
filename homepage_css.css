@@ -37,10 +37,14 @@ body {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Right Side (White) */
+/* Right Side (Light Blue) */
 .site-header .header-inner {
-  display: flex; align-items: center; gap: 30px;
-  padding: 0 30px; background-color: #ffffff; flex-shrink: 0;
+  display: flex; 
+  align-items: center; 
+  gap: 30px;
+  padding: 0 30px; 
+  background-color: #dbeafe; 
+  flex-shrink: 0;
 }
 
 .brand .logo-link { display: flex; align-items: center; gap: 10px; text-decoration: none; }
@@ -178,4 +182,5 @@ mark { background-color: #dbeafe; color: #16213e; padding: 0 6px; border-radius:
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
   .additional-info { border-radius: 0; }
   .step-card, .quick-card, .testimonial-card { padding: 24px 20px; }
+
 }
