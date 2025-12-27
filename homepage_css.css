@@ -1,5 +1,5 @@
 /* ===============================================
-   WalkMe Homepage - Final CSS
+   WalkMe Homepage - Full CSS (Fixed Header)
    =============================================== */
 
 /* Reset */
@@ -26,72 +26,80 @@ body {
 .container { width: min(1200px, 94%); margin: 0 auto; }
 
 /* ===============================================
-   Split Header Styling
+   HEADER NAV BAR (FIXED & CONTINUOUS)
    =============================================== */
-/* ===============================================
 .site-header {
   display: flex;
   align-items: center;
+  /* מתחיל מימין לשמאל ברצף אחד */
   justify-content: flex-start;
   width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #16213e;
+  position: sticky; top: 0; z-index: 1000;
+  background-color: #16213e; /* כחול כהה */
   padding: 0 30px;
   height: 80px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  width: auto !important;
-  background: none !important;
-  padding: 0 !important;
-}
-
+/* מאחד את הקבוצות הפנימיות כדי שלא יפריעו לרצף */
+.header-inner, 
 .secondary-nav {
   display: flex;
   align-items: center;
-  margin-right: 40px;
-  flex-grow: 0 !important;
   width: auto !important;
   background: none !important;
   padding: 0 !important;
+  margin: 0 !important;
 }
 
+/* הריווח בין הלוגו לכפתורים */
+.header-inner {
+  gap: 30px; 
+}
+
+/* חיבור רציף בין התפריט הראשי למשני */
+.secondary-nav {
+  margin-right: 30px !important; /* רווח שממשיך את הרצף */
+}
+
+/* עיצוב הלוגו */
 .brand .logo-link { display: flex; align-items: center; text-decoration: none; }
 .logo-img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid #fff; object-fit: cover; }
-.site-title { font-size: 24px; font-weight: 700; color: #ffffff !important; margin-right: 12px; }
+.site-title { 
+  font-size: 24px; font-weight: 700; color: #ffffff !important; 
+  margin-right: 12px; margin-left: 10px;
+}
 
+/* עיצוב רשימות הכפתורים */
 .nav-list, 
 .secondary-nav-list { 
   display: flex; 
   align-items: center;
-  gap: 20px; 
+  gap: 15px; /* רווח אחיד בין הכפתורים */
   list-style: none; margin: 0; padding: 0; 
 }
 
+/* עיצוב הקישורים עצמם */
 .nav-link, 
 .secondary-nav-list a { 
   text-decoration: none; 
-  color: #e2e8f0 !important; 
+  color: #e2e8f0 !important; /* צבע לבן */
   font-weight: 500; 
   font-size: 16px;
   padding: 10px 15px;
   border-radius: 6px;
   transition: all 0.3s ease;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
+/* אפקט במעבר עכבר */
 .nav-link:hover, 
 .secondary-nav-list a:hover { 
   background-color: rgba(255, 255, 255, 0.15); 
-  color: #60a5fa !important; 
+  color: #60a5fa !important; /* תכלת */
 }
 
+/* כפתור פעיל (דף הבית) */
 .nav-link.active {
   color: #ffffff !important;
   font-weight: 700;
@@ -99,21 +107,6 @@ body {
   border-radius: 0;
 }
 
-@media screen and (max-width: 900px) {
-  .site-header { 
-    flex-direction: column; 
-    height: auto; 
-    padding: 15px; 
-    justify-content: center;
-  }
-  .header-inner, .secondary-nav {
-    flex-direction: column;
-    width: 100%;
-    margin-right: 0;
-    gap: 15px;
-  }
-  .nav-list, .secondary-nav-list { gap: 10px; flex-wrap: wrap; justify-content: center; }
-}
 /* ===============================================
    Main Sections
    =============================================== */
@@ -207,11 +200,19 @@ mark { background-color: #dbeafe; color: #16213e; padding: 0 6px; border-radius:
 
 /* Mobile */
 @media screen and (max-width: 900px) {
-  /* Header Adjustments for Mobile */
-  .site-header { flex-direction: column; }
-  .site-header .header-inner { width: 100%; justify-content: space-between; padding: 10px 20px; }
-  .secondary-nav { width: 100%; padding: 10px 0; justify-content: center; }
-  .secondary-nav-list { justify-content: center; flex-wrap: wrap; }
+  .site-header { 
+    flex-direction: column; 
+    height: auto; 
+    padding: 15px; 
+    justify-content: center;
+  }
+  .header-inner, .secondary-nav {
+    flex-direction: column;
+    width: 100%;
+    margin-right: 0 !important;
+    gap: 15px;
+  }
+  .nav-list, .secondary-nav-list { gap: 10px; flex-wrap: wrap; justify-content: center; }
   
   .hero-title { font-size: 32px; }
   .video-player { height: 250px; }
@@ -219,11 +220,4 @@ mark { background-color: #dbeafe; color: #16213e; padding: 0 6px; border-radius:
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
   .additional-info { border-radius: 0; }
   .step-card, .quick-card, .testimonial-card { padding: 24px 20px; }
-
 }
-
-
-
-
-
-
