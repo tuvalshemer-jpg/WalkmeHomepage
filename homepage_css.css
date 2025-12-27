@@ -31,36 +31,36 @@ body {
 .site-header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* מפזר את הלוגו והתפריטים לצדדים ולאמצע */
+  justify-content: space-around; /* זה מה שמפזר את הכפתורים גם על האמצע */
   width: 100%;
   position: sticky; 
   top: 0; 
   z-index: 1000;
-  background: #16213e; /* כחול כהה אחיד */
-  padding: 10px 40px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  background-color: #16213e; /* כחול כהה אחיד לאורך כל הסרגל */
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-/* ביטול הרקעים הנפרדים שהיו קודם */
+
 .site-header .header-inner, 
 .secondary-nav {
-  background: transparent; 
   display: flex;
   align-items: center;
-  padding: 0;
-  flex-grow: 0; /* ביטול הדחיפה הקיצונית לצדדים */
+  background: transparent !important; /* ביטול הרקע הלבן והגרדיאנט */
+  padding: 0 !important;
+  flex-grow: 0 !important; /* ביטול הדחיפה לקצוות */
 }
 
-/* עיצוב הלוגו והכותרת */
-.brand .logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.logo-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; }
-.site-title { font-size: 22px; font-weight: 700; color: #ffffff; }
 
-/* איחוד כל קישורי הניווט למראה אחיד */
+.brand .logo-link { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid #fff; object-fit: cover; }
+.site-title { font-size: 22px; font-weight: 700; color: #ffffff !important; }
+
+
 .main-nav .nav-list, 
 .secondary-nav-list { 
   display: flex; 
-  gap: 20px; 
+  gap: 25px; /* רווח גדול יותר בין הכפתורים לפיזור טוב יותר */
   list-style: none; 
   margin: 0; 
   padding: 0; 
@@ -69,23 +69,25 @@ body {
 .nav-link, 
 .secondary-nav-list a { 
   text-decoration: none; 
-  color: #ffffff; /* טקסט לבן על רקע כחול */
+  color: #ffffff !important; 
   font-weight: 500; 
-  font-size: 15px;
-  transition: 0.3s;
-  padding: 8px 12px;
-  border-radius: 6px;
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
+
 
 .nav-link:hover, 
 .secondary-nav-list a:hover { 
-  background: rgba(255, 255, 255, 0.15); 
-  color: #60a5fa; /* תכלת במעבר עכבר */
+  background-color: rgba(255, 255, 255, 0.15); 
+  color: #60a5fa !important; 
 }
 
+
 .nav-link.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: #60a5fa;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
   font-weight: 700;
 }
 /* ===============================================
@@ -195,4 +197,5 @@ mark { background-color: #dbeafe; color: #16213e; padding: 0 6px; border-radius:
   .step-card, .quick-card, .testimonial-card { padding: 24px 20px; }
 
 }
+
 
